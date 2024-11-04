@@ -25,7 +25,7 @@ class Bird
   }
 
   static public function find_all() {
-    $sql = "SELECT * FROM sabirds";
+    $sql = "SELECT * FROM birds";
     return self::find_by_sql($sql);
   }
 
@@ -40,7 +40,7 @@ class Bird
   }
 
   static public function find_by_id($id) {
-    $sql = "SELECT * FROM sabirds" ;
+    $sql = "SELECT * FROM birds" ;
     $sql .= "WHERE id='" . self::$database->escape_string($id) . "'";
     $obj_array = self::find_by_sql($sql);
     if(!empty($obj_array)) {
