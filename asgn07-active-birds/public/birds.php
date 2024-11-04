@@ -8,7 +8,7 @@ include(SHARED_PATH . '/public_header.php');
 <p>This is a short list -- start your birding!</p>
 
 
-<table>
+<table border="1">
   <tr>
     <th>Name</th>
     <th>Habitat</th>
