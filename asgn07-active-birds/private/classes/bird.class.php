@@ -1,7 +1,15 @@
 <?php
 
 class Bird
-{
+{ 
+  // Active Record Code Start
+
+  static protected $database;
+
+  static public function set_database($database) {
+    self::$database = $database;
+  }
+// Active Record Code End 
 
   public $common_name;
   public $habitat;
