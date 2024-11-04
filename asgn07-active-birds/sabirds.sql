@@ -7,10 +7,10 @@ DROP DATABASE IF EXISTS sabirds;
 CREATE DATABASE IF NOT EXISTS sabirds;
 USE sabirds;
 
-DROP USER 'sabirdsUser'@'localhost';
-CREATE USER 'sabirdsUser'@'localhost' IDENTIFIED BY 'cassowary';
-GRANT ALL ON *.* TO 'sabirdsUser'@'localhost';
-FLUSH PRIVILEGES;
+-- DROP USER 'sabirdsUser'@'localhost';
+-- CREATE USER 'sabirdsUser'@'localhost' IDENTIFIED BY 'cassowary';
+-- GRANT ALL ON *.* TO 'sabirdsUser'@'localhost';
+-- FLUSH PRIVILEGES;
 -- ------------------------------------------------------------------------------
 
 --

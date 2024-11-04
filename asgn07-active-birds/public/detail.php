@@ -3,8 +3,12 @@
 <?php
 
   // Get requested ID
-
-  // Find bicycle using ID
+  $id = $_GET['id'] ?? false;
+  if(!$id) {
+    redirect_to('birds.php');
+  }
+  // Find bird using ID
+  $bird = Bird::find_by_id($id);
 
 ?>
 
@@ -20,23 +24,23 @@
     <div class="detail">
       <dl>
         <dt>Common Name</dt>
-        <dd><?php echo h($bike->brand); ?></dd>
+        <dd><?php echo h($bird->common_name); ?></dd>
       </dl>
       <dl>
         <dt>Habitat</dt>
-        <dd><?php echo h($bike->model); ?></dd>
+        <dd><?php echo h($bird->habitat); ?></dd>
       </dl>
       <dl>
         <dt>Food</dt>
-        <dd><?php echo h($bike->year); ?></dd>
+        <dd><?php echo h($bird->food); ?></dd>
       </dl>
       <dl>
         <dt>Conservation</dt>
-        <dd><?php echo h($bike->category); ?></dd>
+        <dd><?php echo h($bird->conservation()); ?></dd>
       </dl>
       <dl>
         <dt>Backyard Tips</dt>
-        <dd><?php echo h($bike->gender); ?></dd>
+        <dd><?php echo h($bird->backyard_tips); ?></dd>
       </dl>
     </div>
 
