@@ -21,8 +21,7 @@ include(SHARED_PATH . '/public_header.php');
 
   <?php
 
-  $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
-  $bird_array = $parser->parse();
+  
 
   foreach ($bird_array as $args) {
     $bird = new Bird($args);
