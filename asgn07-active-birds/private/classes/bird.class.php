@@ -6,6 +6,10 @@ class Bird
 
   static protected $database;
 
+  function set_database($database){
+    self::$database = $database;
+  }
+
   static public function find_by_sql($sql) {
     $result = self::$database->query($sql);
     if(!$result) {
