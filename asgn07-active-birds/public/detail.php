@@ -13,7 +13,7 @@
 
 <div id="main">
 
-  <a href="bicycles.php">Back to Inventory</a>
+  <a href="birds.php">Back to All Birds</a>
 
   <div id="page">
 
