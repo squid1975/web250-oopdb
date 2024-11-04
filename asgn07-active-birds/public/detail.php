@@ -19,44 +19,24 @@
 
     <div class="detail">
       <dl>
-        <dt>Brand</dt>
+        <dt>Common Name</dt>
         <dd><?php echo h($bike->brand); ?></dd>
       </dl>
       <dl>
-        <dt>Model</dt>
+        <dt>Habitat</dt>
         <dd><?php echo h($bike->model); ?></dd>
       </dl>
       <dl>
-        <dt>Year</dt>
+        <dt>Food</dt>
         <dd><?php echo h($bike->year); ?></dd>
       </dl>
       <dl>
-        <dt>Category</dt>
+        <dt>Conservation</dt>
         <dd><?php echo h($bike->category); ?></dd>
       </dl>
       <dl>
-        <dt>Gender</dt>
+        <dt>Backyard Tips</dt>
         <dd><?php echo h($bike->gender); ?></dd>
-      </dl>
-      <dl>
-        <dt>Color</dt>
-        <dd><?php echo h($bike->color); ?></dd>
-      </dl>
-      <dl>
-        <dt>Weight</dt>
-        <dd><?php echo h($bike->weight_kg()) . ' / ' . h($bike->weight_lbs()); ?></dd>
-      </dl>
-      <dl>
-        <dt>Condition</dt>
-        <dd><?php echo h($bike->condition()); ?></dd>
-      </dl>
-      <dl>
-        <dt>Price</dt>
-        <dd><?php echo h(money_format('$%i', $bike->price)); ?></dd>
-      </dl>
-      <dl>
-        <dt>Description</dt>
-        <dd><?php echo h($bike->description); ?></dd>
       </dl>
     </div>
 
