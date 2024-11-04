@@ -6,7 +6,7 @@ class Bird
 
   static protected $database;
 
-  function set_database($database){
+  static public function set_database($database){
     self::$database = $database;
   }
 
