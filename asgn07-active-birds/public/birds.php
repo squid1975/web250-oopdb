@@ -30,7 +30,7 @@ include(SHARED_PATH . '/public_header.php');
       <td><?php echo h($bird->food); ?></td>
       <td><?php echo h($bird->conservation()); ?></td>
       <td><?php echo h($bird->backyard_tips); ?></td>
-      <td><a href="/detail.php?id=<?php echo $bird->id; ?>">View</a></td>
+      <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
     </tr>
   <?php } ?>
 

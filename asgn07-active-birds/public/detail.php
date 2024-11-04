@@ -4,6 +4,7 @@
 
   // Get requested ID
   $id = $_GET['id'] ?? false;
+  
   if(!$id) {
     redirect_to('birds.php');
   }
