@@ -16,13 +16,23 @@ class Bird
     while($record = $result->fetch_assoc()) {
       $object_array[] = self::instantiate($record);
     }
-    $result = free();
+    $result->free();
     return $object_array;
   }
 
   static public function find_all() {
     $sql = "SELECT * FROM sabirds";
     return self::find_by_sql($sql);
+  }
+
+  static protected function instantiate($record){
+    $object = new self;
+    foreach($record as $property=>$value){
+      if(property_exists($object, $property)){
+        $object->$property = $value;
+      }
+    }
+    return $object;
   }
 
 // Active Record Code End 
