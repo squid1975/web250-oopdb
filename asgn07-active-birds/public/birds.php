@@ -21,10 +21,9 @@ include(SHARED_PATH . '/public_header.php');
 
   <?php
 
-  
+  $birds = Bird::find_all();
 
-  foreach ($bird_array as $args) {
-    $bird = new Bird($args);
+  foreach ($birds as $bird) {
   ?>
     <tr>
       <td><?php echo h($bird->common_name); ?></td>
