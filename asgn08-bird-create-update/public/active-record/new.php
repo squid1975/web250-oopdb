@@ -18,8 +18,8 @@ if(is_post_request()) {
 
   if($result === true) {
     $new_id = $bird->id;
-    $_SESSION['message'] = 'The bird was updated successfully.';
-    redirect_to(url_for('active-record/show.php?id=' . $id));
+    $_SESSION['message'] = 'The bird was created successfully.';
+    redirect_to(url_for('active-record/show.php?id=' . $new_id));
   } else {
     // show errors
   }
