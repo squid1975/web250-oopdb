@@ -40,16 +40,16 @@ if(is_post_request()) {
   <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
 
   <div class="bird edit">
-    <h1>Edit Bird</h1>
+    <h1>Create Bird</h1>
 
     <?php // echo display_errors($errors); ?>
 
-    <form action="<?php echo url_for('/public/active-record/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/public/active-record/new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
       
       <div id="operations">
-        <input type="submit" value="Edit Bird">
+        <input type="submit" value="Create Bird">
       </div>
     </form>
 
