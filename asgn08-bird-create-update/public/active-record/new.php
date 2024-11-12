@@ -1,11 +1,7 @@
 <?php
 
-require_once('../private/initialize.php');
+require_once('../../private/initialize.php');
 
-if(!isset($_GET['id'])) {
-  redirect_to(url_for('/index.php'));
-}
-$id = $_GET['id'];
 
 if(is_post_request()) {
 
@@ -17,10 +13,11 @@ if(is_post_request()) {
   $args['conservation_id'] = $_POST['conservation_id'] ?? NULL;
   $args['backyard_tips'] = $_POST['backyard_tips'] ?? NULL;
 
-  $bird = [];
+  $bird = new Bird($args);
+  $result = $bird->create();
 
-  $result = false;
   if($result === true) {
+    $new_id = $bird->id;
     $_SESSION['message'] = 'The bird was updated successfully.';
     redirect_to(url_for('active-record/show.php?id=' . $id));
   } else {
@@ -30,24 +27,24 @@ if(is_post_request()) {
 } else {
 
   // display the form
-  $bird = [];
+  $bird = new Bird;
 }
 
 ?>
 
-<?php $page_title = 'Edit Bird'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php $page_title = 'Create Bird'; ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/active-record/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
 
-  <div class="bicycle edit">
+  <div class="bird edit">
     <h1>Edit Bird</h1>
 
     <?php // echo display_errors($errors); ?>
 
-    <form action="<?php echo url_for('/staff/bicycles/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/public/active-record/edit.php?id=' . h(u($id))); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
       

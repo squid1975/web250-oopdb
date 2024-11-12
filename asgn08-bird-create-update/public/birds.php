@@ -7,7 +7,7 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-<a href="<?php echo url_for('/active-record/new.php');?>">Add Bird</a>
+<a href="../public/active-record/new.php">Add Bird</a>
 
     <table border="1">
       <tr>
