@@ -22,7 +22,7 @@
 <?php
 
 // Create a new bird object that uses the find_all() method
-
+$birds = Bird::find_all();
 
 
   foreach($birds as $bird) { 
