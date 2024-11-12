@@ -7,8 +7,8 @@
 
 // localhost
 define("DB_SERVER", "localhost");
-define("DB_USER", "sabirdsUser");
-define("DB_PASS", "cassowary");
+define("DB_USER", "squidtheadmin");
+define("DB_PASS", "Deadmau5fan1997!");
 define("DB_NAME", "sabirds");
 
 // a2hosting
