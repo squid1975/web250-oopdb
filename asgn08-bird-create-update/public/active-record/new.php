@@ -38,7 +38,7 @@ if(is_post_request()) {
 
     <?php echo display_errors($bird->errors); ?>
 
-    <form action="<?php echo url_for('/public/active-record/new.php'); ?>" method="post">
+    <form action="<?php echo url_for('/active-record/new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
       

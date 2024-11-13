@@ -58,16 +58,8 @@ class DatabaseObject {
 
   protected function validate() {
     $this->errors = [];
-    if(is_blank($this->common_name)){
-      $this->errors[] = "Name cannot be blank.";
-    }
-    if(is_blank($this->habitat)){
-      $this->errors[] = "Habitat cannot be blank.";
-    }
-    if(is_blank($this->food)){
-      $this->errors[] = "Food cannot be blank.";
-    }
 
+    // Add custom validations
     return $this->errors;
   }
 
