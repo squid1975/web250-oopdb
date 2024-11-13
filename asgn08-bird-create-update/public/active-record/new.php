@@ -36,7 +36,7 @@ if(is_post_request()) {
   <div class="bird edit">
     <h1>Create Bird</h1>
 
-    <?php // echo display_errors($errors); ?>
+    <?php echo display_errors($bird->errors); ?>
 
     <form action="<?php echo url_for('/public/active-record/new.php'); ?>" method="post">
 
