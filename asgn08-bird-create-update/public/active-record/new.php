@@ -13,7 +13,7 @@ if(is_post_request()) {
   if($result === true) {
     $new_id = $bird->id;
     $_SESSION['message'] = 'The bird was created successfully.';
-    redirect_to(url_for('active-record/show.php?id=' . $new_id));
+    redirect_to(url_for('/active-record/show.php?id=' . $new_id));
   } else {
     // show errors
   }
@@ -31,7 +31,7 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to Inventory</a>
 
   <div class="bird edit">
     <h1>Create Bird</h1>

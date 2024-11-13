@@ -1,4 +1,4 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 
 <?php
 
@@ -13,7 +13,7 @@ $bird = Bird::find_by_id($id);
 
 <div id="content">
 
-<a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
+<a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to Inventory</a>
 
   <div class="bird show">
 
@@ -25,15 +25,15 @@ $bird = Bird::find_by_id($id);
         <dd><?php echo h($bird->habitat); ?></dd>
       </dl>
       <dl>
-        <dt>Model</dt>
+        <dt>Food</dt>
         <dd><?php echo h($bird->food); ?></dd>
       </dl>
       <dl>
-        <dt>Year</dt>
+        <dt>Conservation ID</dt>
         <dd><?php echo h($bird->conservation_id); ?></dd>
       </dl>
       <dl>
-        <dt>Category</dt>
+        <dt>Backyard Tips</dt>
         <dd><?php echo h($bird->backyard_tips); ?></dd>
       </dl>
     </div>
