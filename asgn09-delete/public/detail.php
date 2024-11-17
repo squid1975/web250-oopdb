@@ -11,7 +11,6 @@
   }
 
   // Find bird using ID
-
   $bird = Bird::find_by_id($id);
   
 
