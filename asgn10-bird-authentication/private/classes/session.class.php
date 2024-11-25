@@ -3,6 +3,8 @@
 class Session {
 
   private $member_id;
+  public $username;
+  private $last_login;
 
   public function __construct(){
     session_start();
@@ -14,6 +16,8 @@ class Session {
       session_regenerate_id();
       $_SESSION['member_id'] = $member->id;
       $this->member_id = $member->id;
+      $this->username = $_SESSION['username'] = $member->username;
+      $this->last_login = $_SESSION['last_login'] = time();
     }
     return true;
   }
@@ -24,7 +28,12 @@ class Session {
 
   public function logout(){
     unset($_SESSION['member_id']);
+    unset($_SESSION['username']);
+    unset($_SESSION['last_login']);
     unset($this->member_id);
+    unset($this->username);
+    unset($this->last_login);
+
     return true;
   }
 
@@ -32,6 +41,9 @@ class Session {
     if(isset($_SESSION['member_id']))
     {
       $this->member_id = $_SESSION['member_id'];
+      $this->username = $_SESSION['username'];
+      $this->last_login = $_SESSION['last_login'];
+
     }
   }
 

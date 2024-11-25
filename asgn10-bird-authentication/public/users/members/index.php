@@ -1,18 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-if(!$session->is_logged_in()) {
-  redirect_to(url_for('/users/login.php'));
-}
-?>
-<?php
   
 // Find all members
 $members = Member::find_all();
   
 ?>
 <?php $page_title = 'members'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '/members_header.php'); ?>
 
 <div id="content">
   <div class="members listing">

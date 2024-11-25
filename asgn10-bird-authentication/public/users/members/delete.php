@@ -34,7 +34,7 @@ if(is_post_request()) {
   <div class="member delete">
     <h1>Delete Member</h1>
     <p>Are you sure you want to delete this member?</p>
-    <p class="item"><?php echo h($member->full_name()); ?></p>
+    <p class="item"><?php echo h($member->username); ?></p>
 
     <form action="<?php echo url_for('/users/members/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
