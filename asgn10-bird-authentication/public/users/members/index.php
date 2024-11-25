@@ -1,6 +1,11 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
+if(!$session->is_logged_in()) {
+  redirect_to(url_for('/users/login.php'));
+}
+?>
+<?php
   
 // Find all members
 $members = Member::find_all();
