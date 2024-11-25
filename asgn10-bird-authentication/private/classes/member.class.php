@@ -1,6 +1,6 @@
 <?php 
 
-class Members extends DatabaseObject {
+class Member extends DatabaseObject {
 
   static protected $table_name = "users";
   static protected $db_columns = ['id', 'first_name', 'last_name', 'email', 'username', 'user_level', 'hashed_password'];

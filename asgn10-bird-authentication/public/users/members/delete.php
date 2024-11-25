@@ -1,19 +1,19 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('/../../../private/initialize.php');
 
 if(!isset($_GET['id'])) {
   redirect_to(url_for('/users/members/index.php'));
 }
 $id = $_GET['id'];
-$member = Members::find_by_id($id);
+$member = Member::find_by_id($id);
 if($member == false) {
   redirect_to(url_for('/users/members/index.php'));
 }
 
 if(is_post_request()) {
 
-  // Delete admin
+  // Delete member
   $result = $member->delete();
   $_SESSION['message'] = 'The member was deleted successfully.';
   redirect_to(url_for('/users/members/index.php'));

@@ -6,7 +6,7 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/users/members/index.php'));
 }
 $id = $_GET['id'];
-$member = Members::find_by_id($id);
+$member = Member::find_by_id($id);
 if($member == false) {
   redirect_to(url_for('/users/members/index.php'));
 }

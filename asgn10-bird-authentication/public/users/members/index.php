@@ -2,15 +2,16 @@
 
 <?php
   
-// Find all admins
-$members =Members::find_all();
+// Find all members
+$members = Member::find_all();
   
 ?>
-<?php $page_title = 'Members'; ?>
+<?php $page_title = 'members'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
-    <h1>Admins</h1>
+  <div class="members listing">
+    <h1>Members</h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/users/members/new.php'); ?>">Add Member</a>
@@ -35,13 +36,14 @@ $members =Members::find_all();
           <td><?php echo h($member->last_name); ?></td>
           <td><?php echo h($member->email); ?></td>
           <td><?php echo h($member->username); ?></td>
-          <td><a class="action" href="<?php echo url_for('/users/members/show.php?id=' . h(u($member->id))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/users/members/edit.php?id=' . h(u($member->id))); ?>">Edit</a></td>
-          <td><a class="action" href="<?php echo url_for('/users/members/delete.php?id=' . h(u($member->id))); ?>">Delete</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/members/show.php?id=' . h(u($member->id))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/members/edit.php?id=' . h(u($member->id))); ?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/members/delete.php?id=' . h(u($member->id))); ?>">Delete</a></td>
     	  </tr>
       <?php } ?>
   	</table>
 
+  </div>
 
 </div>
 

@@ -1,55 +1,52 @@
 <?php
 
-require_once('../../private/initialize.php');
-
+require_once('../../../private/initialize.php');
 
 if(is_post_request()) {
 
-  // Save record using post parameters
-  $args = $_POST['bird'];
-  $bird = new Bird($args);
-  $result = $bird->save();
+  // Create record using post parameters
+  $args = $_POST['member'];
+  $member = new Member($args);
+  $result = $member->save();
 
   if($result === true) {
-    $new_id = $bird->id;
-    $_SESSION['message'] = 'The bird was created successfully.';
-    redirect_to(url_for('/active-record/show.php?id=' . $new_id));
+    $new_id = $member->id;
+    $_SESSION['message'] = 'The member was created successfully.';
+    redirect_to(url_for('/users/members/show.php?id=' . $new_id));
   } else {
     // show errors
   }
 
 } else {
-
   // display the form
-  $bird = new Bird;
+  $member = new Member;
 }
 
 ?>
 
-<?php $page_title = 'Create Bird'; ?>
+<?php $page_title = 'Create Admin'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to Inventory</a>
+  <a class="back-link" href="<?php echo url_for('/users/members/index.php'); ?>">&laquo; Back to List</a>
 
-  <div class="bird edit">
-    <h1>Create Bird</h1>
+  <div class="member new">
+    <h1>Create Admin</h1>
 
-    <?php echo display_errors($bird->errors); ?>
+    <?php echo display_errors($member->errors); ?>
 
-    <form action="<?php echo url_for('/active-record/new.php'); ?>" method="post">
+    <form action="<?php echo url_for('/users/members/new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
-      
+
       <div id="operations">
-        <input type="submit" value="Create Bird">
+        <input type="submit" value="Create Member" />
       </div>
     </form>
 
   </div>
 
 </div>
-
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
