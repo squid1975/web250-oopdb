@@ -1,40 +1,37 @@
 <?php
-
 // prevents this code from being loaded directly in the browser
 // or without first setting the necessary object
-if(!isset($bird)) {
-  redirect_to(url_for('../public/index.php'));
+if(!isset($admin)) {
+  redirect_to(url_for('/staff/admins/index.php'));
 }
 ?>
 
 <dl>
-  <dt>Common Name</dt>
-  <dd><input type="text" name="bird[common_name]" value="<?php echo h($bird->common_name); ?>" ></dd>
+  <dt>First name</dt>
+  <dd><input type="text" name="admin[first_name]" value="<?php echo h($admin->first_name); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt>Habitat</dt>
-  <dd><input type="text" name="bird[habitat]" value="<?php echo h($bird->habitat);?>" ></dd>
+  <dt>Last name</dt>
+  <dd><input type="text" name="admin[last_name]" value="<?php echo h($admin->last_name); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt>Food</dt>
-  <dd><input type="text" name="bird[food]" value="<?php echo h($bird->food);?>" ></dd>
+  <dt>Email</dt>
+  <dd><input type="text" name="admin[email]" value="<?php echo h($admin->email); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt>Conservation Level</dt>
-  <dd>
-    <select name="bird[conservation_id]">
-      <option value=""></option>
-    <?php foreach(Bird::CONSERVATION_OPTIONS as $cons_id=> $cons_value) { ?>
-      <option value="<?php echo $cons_id; ?>"<?php if($bird->conservation_id === $cons_id) { echo 'selected';}?>><?php echo $cons_value; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
+  <dt>Username</dt>
+  <dd><input type="text" name="admin[username]" value="<?php echo h($admin->username); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt>Backyard Tips</dt>
-  <dd><textarea name="bird[backyard_tips]" rows="5" cols="50"><?php echo h($bird->backyard_tips);?></textarea></dd>
+  <dt>Password</dt>
+  <dd><input type="password" name="admin[password]" value="" /></dd>
+</dl>
+
+<dl>
+  <dt>Confirm Password</dt>
+  <dd><input type="password" name="admin[confirm_password]" value="" /></dd>
 </dl>
