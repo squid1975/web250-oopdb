@@ -10,8 +10,16 @@
 
     <header>
       <h1>
-        <a href="<?php echo url_for('/index.php'); ?>">
+        <?php if($session->is_logged_in()){ ?>
+          <a href="<?php echo url_for('/index.php'); ?>">
           WNC Birds
         </a>
+        <a href="<?php echo url_for('users/logout.php'); ?>">
+          Logout
+        </a>
+        <?php } else {?>
+          <a href="<?php echo url_for('/index.php'); ?>">
+          WNC Birds
+        </a> <?php }?>
       </h1>
     </header>
