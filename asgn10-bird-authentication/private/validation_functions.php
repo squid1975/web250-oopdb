@@ -100,6 +100,13 @@
   //   has_unique_username('johnqpublic', 4)
   function has_unique_username($username, $current_id="0") {
     // Need to re-write for OOP
+    $member = Member::find_by_username($username);
+    if($member === false || $member->id == $current_id) {
+      //is unique
+      return true;
+    } else {
+      return false; 
+    }
   }
 
 ?>
