@@ -2,10 +2,11 @@
 
 require_once('../../private/initialize.php');
 
+require_login();
 
 if(is_post_request()) {
 
-  // Save record using post parameters
+  // Create record using post parameters
   $args = $_POST['bird'];
   $bird = new Bird($args);
   $result = $bird->save();
@@ -19,7 +20,6 @@ if(is_post_request()) {
   }
 
 } else {
-
   // display the form
   $bird = new Bird;
 }
@@ -27,21 +27,24 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Create Bird'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to Inventory</a>
+  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
 
-  <div class="bird edit">
+  <div class="bird new">
     <h1>Create Bird</h1>
 
     <?php echo display_errors($bird->errors); ?>
 
     <form action="<?php echo url_for('/active-record/new.php'); ?>" method="post">
 
-      <?php include('form_fields.php'); ?>
-      
+      <?php 
+        $conservation_options = Bird::getConservationOptions();
+        include('form_fields.php'); 
+      ?>
+
       <div id="operations">
         <input type="submit" value="Create Bird">
       </div>
@@ -50,6 +53,5 @@ if(is_post_request()) {
   </div>
 
 </div>
-
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

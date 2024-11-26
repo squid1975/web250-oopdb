@@ -1,4 +1,5 @@
 <?php require_once('../../../private/initialize.php'); ?>
+<?php require_login(); ?>
 
 <?php
 
@@ -8,16 +9,16 @@ $member = Member::find_by_id($id);
 
 ?>
 
-<?php $page_title = 'Show member: ' . h($member->full_name()); ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php $page_title = 'Show Member: ' . h($member->full_name()); ?>
+<?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/users/members/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/active-record/members/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="member show">
 
-    <h1>member: <?php echo h($member->full_name()); ?></h1>
+    <h1>Member: <?php echo h($member->full_name()); ?></h1>
 
     <div class="attributes">
       <dl>

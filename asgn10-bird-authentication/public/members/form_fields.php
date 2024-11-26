@@ -2,7 +2,7 @@
 // prevents this code from being loaded directly in the browser
 // or without first setting the necessary object
 if(!isset($member)) {
-  redirect_to(url_for('/users/members/index.php'));
+  redirect_to(url_for('/active-record/members/index.php'));
 }
 ?>
 
@@ -32,6 +32,6 @@ if(!isset($member)) {
 </dl>
 
 <dl>
-  <dt>Confirm Password</dt>
+  <dt>Confirm password</dt>
   <dd><input type="password" name="member[confirm_password]" value="" /></dd>
 </dl>
