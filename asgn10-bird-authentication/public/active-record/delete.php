@@ -3,7 +3,7 @@
 require_once('../../private/initialize.php');
 
 if(!isset($_GET['id'])) {
-  redirect_to(url_for('/public/birds.php'));
+  redirect_to(url_for('/active-record/index.php'));
 }
 $id = $_GET['id'];
 $bird = Bird::find_by_id($id);
