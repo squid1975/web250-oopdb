@@ -6,7 +6,7 @@
   <ul>
     <li><a href="<?php echo url_for('/birds.php'); ?>">View Our Birds</a></li>
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
-    <li><a href="<?php echo url_for('users/members/index.php'); ?>">Members</a></li>
+    <li><a href="<?php echo url_for('/active-record/index.php'); ?>">Back to main menu</a></li>
   </ul>
     
 
