@@ -18,7 +18,7 @@ $member = Member::find_by_id($id);
 
   <div class="member show">
 
-    <h1>Member: <?php echo h($member->full_name()); ?></h1>
+    <h1>Member: <?php echo h($member->full_name());?></h1>
 
     <div class="attributes">
       <dl>
