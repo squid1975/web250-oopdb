@@ -26,7 +26,6 @@ class Bird extends DatabaseObject
     $this->common_name = $args['common_name'] ?? '';
     $this->habitat = $args['habitat'] ?? '';
     $this->food = $args['food'] ?? '';
-    $this->behavior = $args['behavior'] ?? '';
     $this->conservation_id = $args['conservation_id'] ?? '';
     $this->backyard_tips = $args['backyard_tips'] ?? '';
   }
