@@ -5,6 +5,10 @@
 ?>
 
 <ul>
+<?php if(!$session->is_admin_logged_in()) { ?>
+    <li><a href="<?php echo url_for('/login.php'); ?>">Log in</a></li>
+    <li><a href="<?php echo url_for('/signup.php'); ?>">Sign Up</a></li>
+  <?php } ?>
   <?php if($session->is_admin_logged_in()) { ?>
     <li><a href="<?php echo url_for('/members/index.php'); ?>">View Members</a></li>
   <?php } ?>
