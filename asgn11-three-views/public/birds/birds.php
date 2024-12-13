@@ -1,5 +1,5 @@
 <?php 
-  require_once('../private/initialize.php');
+  require_once('../../private/initialize.php');
   $page_title = 'Bird List';
   include(SHARED_PATH . '/public_header.php');
 ?>
@@ -24,7 +24,6 @@
 // Create a new bird object that uses the find_all() method
 $birds = Bird::find_all();
 
-
   foreach($birds as $bird) { 
 
   ?>
@@ -37,7 +36,6 @@ $birds = Bird::find_all();
         <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
         <td><a href="active-record/edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
         <td><a href="<?php echo url_for('/active-record/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
-
       </tr>
       <?php } ?>
 

@@ -11,7 +11,7 @@ function require_admin_login (){
   if(!$session->is_logged_in()) {
     redirect_to(url_for('/login.php'));
   } elseif($member->user_level === 'a' && $session->is_logged_in()) {
-    redirect_to(url_for('/members/index.php'))
+    redirect_to(url_for('/members/index.php'));
   }
 }
 

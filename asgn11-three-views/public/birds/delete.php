@@ -5,12 +5,12 @@ require_once('../../private/initialize.php');
 require_login();
 
 if(!isset($_GET['id'])) {
-  redirect_to(url_for('/active-record/index.php'));
+  redirect_to(url_for('/index.php'));
 }
 $id = $_GET['id'];
 $bird = Bird::find_by_id($id);
 if($bird == false) {
-  redirect_to(url_for('/active-record/index.php'));
+  redirect_to(url_for('/index.php'));
 }
 
 if(is_post_request()) {
@@ -18,7 +18,7 @@ if(is_post_request()) {
   // Delete bird
   $result = $bird->delete();
   $_SESSION['message'] = 'The bird was deleted successfully.';
-  redirect_to(url_for('/active-record/index.php'));
+  redirect_to(url_for('/index.php'));
 
 } else {
   // Display form

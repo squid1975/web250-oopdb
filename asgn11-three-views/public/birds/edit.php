@@ -1,14 +1,15 @@
 <?php
 
 require_once('../../private/initialize.php');
+require_login();
 
 if(!isset($_GET['id'])) {
-  redirect_to(url_for('/active-record/index.php'));
+  redirect_to(url_for('/index.php'));
 }
 $id = $_GET['id'];
 $bird = Bird::find_by_id($id);
 if($bird == false) {
-  redirect_to(url_for('/active-record/index.php'));
+  redirect_to(url_for('/index.php'));
 }
 
 if(is_post_request()) {
@@ -46,7 +47,7 @@ if(is_post_request()) {
 
     <?php echo display_errors($bird->errors); ?>
 
-    <form action="<?php echo url_for('/active-record/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/edit.php?id=' . h(u($id))); ?>" method="post">
 
       
       <?php 
