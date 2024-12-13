@@ -2,8 +2,6 @@
 
 require_once('../private/initialize.php');
 
-// require_login();
-
 if(is_post_request()) {
 
   // Create record using post parameters
@@ -14,8 +12,9 @@ if(is_post_request()) {
 
   if($result === true) {
     $new_id = $member->id;
+    $session->login($member);
     $_SESSION['message'] = 'You have been signed up successfully.';
-    redirect_to(url_for('/members/show.php?id=' . $new_id));
+    redirect_to(url_for('/birds/index.php'))
   } else {
     // show errors
   }

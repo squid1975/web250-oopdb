@@ -31,7 +31,7 @@ class Session {
 
   public function is_admin_logged_in() {
     
-    return isset($this->is_loggin_in) && $this->user_level === 'a'();
+    return isset($this->is_logged_in()) && $this->user_level === 'a';
   }
 
   public function logout() {

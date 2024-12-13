@@ -4,10 +4,21 @@
   include(SHARED_PATH . '/public_header.php');
 ?>
 
+<ul>
+  <?php if($session->is_admin_logged_in()) { ?>
+    <li><a href="<?php echo url_for('/members/index.php'); ?>">View Members</a></li>
+  <?php } ?>
+    <li><a href="<?php echo url_for('birds/about.php'); ?>">About Us</a></li>
+  </ul>
+
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-<a href="../public/active-record/new.php">Add Bird</a>
+<?php if ($session->is_logged_in()) { ?>
+
+<a href="<?php echo url_for('birds/new.php'); ?>">Add a Bird</a>
+
+<?php } ?>
 
     <table border="1">
       <tr>
@@ -34,8 +45,14 @@ $birds = Bird::find_all();
         <td><?php echo h($bird->conservation()); ?></td>
         <td><?php echo h($bird->backyard_tips); ?></td>
         <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
-        <td><a href="active-record/edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
-        <td><a href="<?php echo url_for('/active-record/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
+
+
+        <?php if ($session->is_logged_in()) { ?>
+
+        <td><a href="birds/edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
+        <td><a href="<?php echo url_for('/birds/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
+      
+      <?php } ?>
       </tr>
       <?php } ?>
 
