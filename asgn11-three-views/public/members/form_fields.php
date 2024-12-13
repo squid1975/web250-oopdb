@@ -27,11 +27,6 @@ if(!isset($member)) {
 </dl>
 
 <dl>
-  <dt>User level</dt>
-  <dd><input type="text" name="member[user_level]" value="<?php echo h($member->user_level); ?>" /></dd>
-</dl>
-
-<dl>
   <dt>Password</dt>
   <dd><input type="password" name="member[password]" value="" /></dd>
 </dl>
@@ -39,4 +34,9 @@ if(!isset($member)) {
 <dl>
   <dt>Confirm password</dt>
   <dd><input type="password" name="member[confirm_password]" value="" /></dd>
+</dl>
+
+<dl>
+  <dt>User level (Enter 'a' for Admin or 'm' for member)</dt>
+  <dd><input type="text" name="member[user_level]" value="<?php echo h($member->user_level); ?>" /></dd>
 </dl>
