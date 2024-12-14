@@ -5,6 +5,7 @@ class Session {
   private $member_id;
   public $username;
   private $last_login;
+  private $user_level;
 
   public const MAX_LOGIN_AGE = 60*60*24; // 1 day
 
@@ -30,8 +31,7 @@ class Session {
   }
 
   public function is_admin_logged_in() {
-    
-    return ($this->is_logged_in()) && $this->user_level === 'a';
+    return $this->is_logged_in() && $this->user_level === 'a';
   }
 
   public function logout() {

@@ -53,7 +53,7 @@ $birds = Bird::find_all();
 
         <?php if ($session->is_logged_in()) { ?>
 
-        <td><a href="birds/edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
+        <td><a href="<?php echo url_for('/birds/edit.php?id=' . h(u($bird->id))); ?>">Edit</a></td>
         <td><a href="<?php echo url_for('/birds/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
       
       <?php } ?>

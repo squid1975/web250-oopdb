@@ -9,7 +9,7 @@
   <div id="main-menu">
     <h2>Main Menu</h2>
     <ul>
-      <li><a href="<?php echo url_for('/birds.php'); ?>">Birds</a></li>
+      <li><a href="<?php echo url_for('birds/birds.php'); ?>">Birds</a></li>
       <?php if ($session->is_admin_logged_in()) { ?>
       <li><a href="<?php echo url_for('/members/index.php'); ?>">Members</a></li>
       <?php } ?>
