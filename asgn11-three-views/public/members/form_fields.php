@@ -36,7 +36,9 @@ if(!isset($member)) {
   <dd><input type="password" name="member[confirm_password]" value="" /></dd>
 </dl>
 
+<?php if($session->is_admin_logged_in()) { ?>
 <dl>
   <dt>User level (Enter 'a' for Admin or 'm' for member)</dt>
   <dd><input type="text" name="member[user_level]" value="<?php echo h($member->user_level); ?>" /></dd>
 </dl>
+<?php } ?>
