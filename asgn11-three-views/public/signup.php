@@ -14,7 +14,7 @@ if(is_post_request()) {
     $new_id = $member->id;
     $session->login($member);
     $_SESSION['message'] = 'You have been signed up successfully.';
-    redirect_to(url_for('/birds/index.php'))
+    redirect_to(url_for('/birds/index.php'));
   } else {
     // show errors
   }
@@ -41,7 +41,7 @@ if(is_post_request()) {
     <form action="<?php echo url_for('/members/new.php'); ?>" method="post">
 
       <?php 
-        include('form_fields.php'); 
+        include('members/form_fields.php'); 
       ?>
 
       <div id="operations">

@@ -8,6 +8,7 @@ function require_login (){
 
 function require_admin_login (){
   global $session;
+  global $member;
   if(!$session->is_logged_in()) {
     redirect_to(url_for('/login.php'));
   } elseif($member->user_level === 'a' && $session->is_logged_in()) {

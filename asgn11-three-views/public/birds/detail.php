@@ -1,4 +1,4 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 
 <?php
 
@@ -19,7 +19,7 @@
 <?php $page_title = 'Detail: ' . $bird->common_name; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-  <a href="birds.php">Back to Inventory</a>
+  <a href="<?php echo url_for('/birds/birds.php');?>">Back to Inventory</a>
 
       <dl>
         <dt>ID</dt>

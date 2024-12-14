@@ -18,7 +18,7 @@
       ?>">Add Member</a>
     </div>
 
-    <table class="list">
+    <table class="list" border=1>
       <tr>
         <th>ID</th>
         <th>First name</th>
