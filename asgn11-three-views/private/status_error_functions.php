@@ -10,7 +10,7 @@ function require_admin_login () {
   global $session;
 
   if (!$session->is_admin_logged_in()){
-    redirect_to(url_for('/index.php'));
+    redirect_to(url_for('/login.php'));
   } 
 }
 

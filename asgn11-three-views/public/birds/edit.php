@@ -40,7 +40,7 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/birds.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/birds/birds.php'); ?>">&laquo; Back to List</a>
 
   <div class="bird edit">
     <h1>Edit Bird</h1>
@@ -51,7 +51,7 @@ if(is_post_request()) {
 
       
       <?php 
-      $conservation_options = Bird::getConservationOptions();
+       $conservation_options = Bird::CONSERVATION_OPTIONS;
       include('form_fields.php'); 
       ?>
 
