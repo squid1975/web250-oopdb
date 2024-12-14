@@ -6,14 +6,15 @@ function require_login (){
   }
 }
 
-function require_admin_login () {
+function require_admin_login() {
   global $session;
 
-  if (!$session->is_admin_logged_in()){
+  // Check if user is not logged in or is not an admin
+  if (!$session->is_logged_in() OR !$session->is_admin_logged_in()) {
+    // Redirect to login or access denied page
     redirect_to(url_for('/login.php'));
-  } 
+  }
 }
-
 function display_errors($errors=array()) {
   $output = '';
   if(!empty($errors)) {
