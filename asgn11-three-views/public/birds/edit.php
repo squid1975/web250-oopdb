@@ -21,7 +21,7 @@ if(is_post_request()) {
 
   if($result === true) {
     $_SESSION['message'] = 'The bird was updated successfully.';
-    redirect_to(url_for('/active-record/show.php?id=' . $id));
+    redirect_to(url_for('/birds/show.php?id=' . $id));
   } else {
     // show errors
     
@@ -47,7 +47,7 @@ if(is_post_request()) {
 
     <?php echo display_errors($bird->errors); ?>
 
-    <form action="<?php echo url_for('/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/birds/edit.php?id=' . h(u($id))); ?>" method="post">
 
       
       <?php 
