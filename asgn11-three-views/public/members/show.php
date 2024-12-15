@@ -1,6 +1,6 @@
 <?php require_once('../../private/initialize.php'); ?>
 
-
+<?php require_admin_login(); ?>
 
 <?php
 

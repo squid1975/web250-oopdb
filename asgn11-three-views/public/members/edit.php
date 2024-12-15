@@ -2,6 +2,7 @@
 
 require_once('../../private/initialize.php');
 
+require_admin_login();
 
 
 if(!isset($_GET['id'])) {
