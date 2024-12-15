@@ -38,7 +38,7 @@ class Session {
   public function logout() {
     unset($_SESSION['member_id']);
     unset($_SESSION['username']);
-    unset($_SESSION->['user_level']);
+    unset($_SESSION['user_level']);
     unset($_SESSION['last_login']);
     unset($this->member_id);
     unset($this->username);
