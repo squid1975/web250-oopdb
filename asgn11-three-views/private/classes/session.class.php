@@ -38,9 +38,11 @@ class Session {
   public function logout() {
     unset($_SESSION['member_id']);
     unset($_SESSION['username']);
+    unset($_SESSION->['user_level']);
     unset($_SESSION['last_login']);
     unset($this->member_id);
     unset($this->username);
+    unset($this->user_level);
     unset($this->last_login);
     return true;
   }
@@ -49,6 +51,7 @@ class Session {
     if(isset($_SESSION['member_id'])) {
       $this->member_id = $_SESSION['member_id'];
       $this->username = $_SESSION['username'];
+      $this->user_level = $_SESSION['user_level'];
       $this->last_login = $_SESSION['last_login'];
     }
   }

@@ -121,14 +121,6 @@ class Member extends DatabaseObject {
         }   
     }
 
-    public static function is_admin($id) {
-        $user = static::find_by_id($id);
-        if ($user && $user->user_level == 'a') {
-            return true;
-        } else {
-            return ;
-        }
-    }
 }
 
 ?>
