@@ -1,6 +1,6 @@
 <?php require_once('../../private/initialize.php'); ?>
 
-<?php require_admin_login ?>
+
 
 <?php
 
@@ -37,6 +37,10 @@ $member = Member::find_by_id($id);
       <dl>
         <dt>Username</dt>
         <dd><?php echo h($member->username); ?></dd>
+      </dl>
+      <dl>
+        <dt>User level</dt>
+        <dd><?php echo h($member->user_level); ?></dd>
       </dl>
     </div>
 

@@ -24,6 +24,7 @@
         <?php } ?>
         <?php if($session->is_admin_logged_in()) { ?>
           <li><a href="<?php echo url_for('/members/index.php'); ?>">View Members</a></li>
+        <?php } ?>
       </ul>
     </navigation>
 

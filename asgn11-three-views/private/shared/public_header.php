@@ -26,6 +26,7 @@
         <li><a href="<?php echo url_for('/index.php'); ?>">Menu</a></li>
         <li><a href="<?php echo url_for('/logout.php'); ?>">Logout</a></li>
         <?php } ?>
+        <li><a href="<?php echo url_for('/birds/about.php'); ?>">About</a></li>
       </ul>
     </navigation>
     </header>

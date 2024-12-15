@@ -21,11 +21,16 @@ if(is_post_request()) {
   // if there were no errors, try to login
   if(empty($errors)) {
     $member = Member::find_by_username($username);
+    var_dump($member);
     // test if member found and password is correct
     if($member != false && $member->verify_password($password)) {
       // Mark member as logged in
       $session->login($member);
-      redirect_to(url_for('/birds/index.php'));
+      if ($session->is_admin_logged_in()) {
+        redirect_to(url_for('/members/index.php')); // Admin page
+      } else {
+        redirect_to(url_for('/birds/birds.php')); // Regular user page
+    }
     } else {
       // username not found or password does not match
       $errors[] = "Log in was unsuccessful.";

@@ -10,7 +10,7 @@ class Member extends DatabaseObject {
     public $last_name;
     public $email;
     public $username;
-    public $user_level = 'm';
+    public $user_level;
     protected $hashed_password;
     public $password;
     public $confirm_password;
@@ -21,7 +21,7 @@ class Member extends DatabaseObject {
         $this->last_name = $args['last_name'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->username = $args['username'] ?? '';
-        $this->user_level = $args['user_level'] ?? '';
+        $this->user_level = $args['user_level'] ?? 'm';
         $this->password = $args['password'] ?? '';
         $this->confirm_password = $args['confirm_password'] ?? '';
     }
@@ -119,6 +119,15 @@ class Member extends DatabaseObject {
         } else {
             return false;
         }   
+    }
+
+    public static function is_admin($id) {
+        $user = static::find_by_id($id);
+        if ($user && $user->user_level == 'a') {
+            return true;
+        } else {
+            return ;
+        }
     }
 }
 
